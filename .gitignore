@@ -1,0 +1,28 @@
+
+.idea/
+*.class
+*.java~
+.history/
+*.swp
+.pytest_cache/
+__pycache__/
+.scratch
+*.beam
+.DS_Store
+venv/
+generated/
+
+# Node.js
+node_modules/
+dist/
+
+# Java
+target/
+*.jar
+
+# VSCode
+.vscode/
+
+# Uni-app
+unpackage/
+

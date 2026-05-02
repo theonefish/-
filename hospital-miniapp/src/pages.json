@@ -1,0 +1,39 @@
+{
+  "pages": [
+    { "path": "pages/index/index", "style": { "navigationBarTitleText": "首页", "navigationStyle": "custom" } },
+    { "path": "pages/doctor/index", "style": { "navigationBarTitleText": "医生" } },
+    { "path": "pages/doctor/detail", "style": { "navigationBarTitleText": "医生详情" } },
+    { "path": "pages/news/index", "style": { "navigationBarTitleText": "资讯" } },
+    { "path": "pages/news/detail", "style": { "navigationBarTitleText": "资讯详情" } },
+    { "path": "pages/mine/index", "style": { "navigationBarTitleText": "我的" } },
+    { "path": "pages/login/index", "style": { "navigationBarTitleText": "登录" } },
+    { "path": "pages/register/index", "style": { "navigationBarTitleText": "注册" } },
+    { "path": "pages/appointment/confirm", "style": { "navigationBarTitleText": "确认预约" } },
+    { "path": "pages/visit-user/list", "style": { "navigationBarTitleText": "就诊人管理" } },
+    { "path": "pages/visit-user/edit", "style": { "navigationBarTitleText": "就诊人" } },
+    { "path": "pages/my-appointment/list", "style": { "navigationBarTitleText": "我的预约" } },
+    { "path": "pages/my-visit/list", "style": { "navigationBarTitleText": "我的医嘱" } },
+    { "path": "pages/my-exam/list", "style": { "navigationBarTitleText": "检查报告" } },
+    { "path": "pages/my-lab/list", "style": { "navigationBarTitleText": "检验报告" } },
+    { "path": "pages/suggest/index", "style": { "navigationBarTitleText": "意见反馈" } },
+    { "path": "pages/profile/index", "style": { "navigationBarTitleText": "个人信息" } }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "医院预约挂号",
+    "navigationBarBackgroundColor": "#f9f9ff",
+    "backgroundColor": "#f9f9ff"
+  },
+  "tabBar": {
+    "color": "#737686",
+    "selectedColor": "#0052d9",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "首页" },
+      { "pagePath": "pages/doctor/index", "text": "医生" },
+      { "pagePath": "pages/news/index", "text": "资讯" },
+      { "pagePath": "pages/mine/index", "text": "我的" }
+    ]
+  }
+}

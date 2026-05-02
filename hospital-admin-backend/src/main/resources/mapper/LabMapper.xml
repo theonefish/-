@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hospital.mapper.LabMapper">
+
+    <select id="selectLabPage" resultType="com.hospital.entity.Lab">
+        SELECT l.*, d.name as doctor_name
+        FROM lab l
+        LEFT JOIN doctor d ON l.doctor_id = d.id
+        WHERE l.deleted = 0 AND d.deleted = 0
+        <if test="keyword != null and keyword != ''">
+            AND l.lab_type LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+        <if test="patientName != null and patientName != ''">
+            AND l.patient_name LIKE CONCAT('%', #{patientName}, '%')
+        </if>
+        <if test="status != null">
+            AND l.status = #{status}
+        </if>
+        ORDER BY l.create_time DESC
+    </select>
+</mapper>

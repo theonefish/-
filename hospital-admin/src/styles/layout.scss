@@ -1,0 +1,75 @@
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  .sidebar {
+    width: var(--sidebar-width);
+    height: 100%;
+    background: #001529;
+    transition: width 0.3s;
+    flex-shrink: 0;
+
+    &.collapsed {
+      width: var(--sidebar-collapsed-width);
+    }
+
+    .logo {
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+
+      img {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+      }
+    }
+
+    .el-menu {
+      border-right: none;
+      background: transparent;
+    }
+  }
+
+  .main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .header {
+      height: var(--header-height);
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      flex-shrink: 0;
+    }
+
+    .tags-view {
+      height: var(--tags-view-height);
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      flex-shrink: 0;
+    }
+
+    .app-main {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background: var(--bg-color);
+    }
+  }
+}

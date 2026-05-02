@@ -1,0 +1,17 @@
+{
+  "name": "医院预约挂号",
+  "appid": "__UNI__HOSPITAL",
+  "description": "医院预约挂号小程序",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "app-plus": {},
+  "mp-weixin": {
+    "appid": "wx1234567890abcdef",
+    "setting": {
+      "urlCheck": false
+    },
+    "usingComponents": true
+  },
+  "vueVersion": "3"
+}

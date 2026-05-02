@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hospital.mapper.AppointmentMapper">
+
+    <select id="selectAppointmentPage" resultType="com.hospital.entity.Appointment">
+        SELECT a.*, d.name as doctor_name, dept.name as dept_name
+        FROM appointment a
+        LEFT JOIN doctor d ON a.doctor_id = d.id
+        LEFT JOIN department dept ON a.dept_id = dept.id
+        WHERE a.deleted = 0 AND d.deleted = 0 AND dept.deleted = 0
+        <if test="keyword != null and keyword != ''">
+            AND (a.patient_name LIKE CONCAT('%', #{keyword}, '%') OR a.patient_phone LIKE CONCAT('%', #{keyword}, '%'))
+        </if>
+        <if test="doctorId != null">
+            AND a.doctor_id = #{doctorId}
+        </if>
+        <if test="deptId != null">
+            AND a.dept_id = #{deptId}
+        </if>
+        <if test="status != null">
+            AND a.status = #{status}
+        </if>
+        <if test="startDate != null and startDate != ''">
+            AND a.date &gt;= #{startDate}
+        </if>
+        <if test="endDate != null and endDate != ''">
+            AND a.date &lt;= #{endDate}
+        </if>
+        ORDER BY a.create_time DESC
+    </select>
+</mapper>
